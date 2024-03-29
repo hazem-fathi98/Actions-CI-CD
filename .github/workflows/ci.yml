@@ -54,14 +54,15 @@ jobs:
     needs: Integration
     outputs: 
       output1: ${{ steps.ip_address.outputs.ip }}
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  
 
     steps:
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: "us-east-1"
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
       - name: Checkout
         uses: actions/checkout@v4  
