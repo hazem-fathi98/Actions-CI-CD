@@ -10,7 +10,6 @@ resource "aws_instance" "my_ec2" {
 }
 
 resource "aws_eip" "my_eip" {
-  vpc = true
 }
 
 resource "aws_eip_association" "my_association" {
