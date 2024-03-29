@@ -16,11 +16,7 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version: 16.x
-          cache: 'npm'
-      
-      - name: SSH Client
-        run: |
-          sudo apt-get install -y openssh-client    
+          cache: 'npm'    
 
       - name: Dependencies
         run: |
